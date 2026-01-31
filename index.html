@@ -493,6 +493,14 @@
             transform: translateY(0);
         }
 
+        /* Новые стили для адаптивных layout контейнеров */
+        .layout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
@@ -519,6 +527,95 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+            }
+            
+            /* Адаптация для layout контейнеров */
+            .layout-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            /* Адаптация для карточек */
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .model-card {
+                padding: 20px;
+            }
+            
+            .step {
+                padding: 16px;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 13px;
+            }
+            
+            /* Адаптация для секции с ресурсами */
+            .resource-link {
+                padding: 12px;
+            }
+            
+            /* Адаптация для карточки разработчика */
+            #creator .feature-card {
+                padding: 20px;
+            }
+            
+            /* Адаптация для grid в моделях и фичах */
+            .models-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        /* Для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .feature-card {
+                padding: 16px;
+            }
+            
+            .model-card {
+                padding: 16px;
+            }
+            
+            .resource-link {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            #creator .feature-card {
+                padding: 16px;
+            }
+            
+            /* Для статистики в карточке разработчика */
+            #creator .feature-card > div > div:first-child {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            #creator .feature-card > div > div:first-child > div {
+                flex: 1;
+                width: 100%;
             }
         }
     </style>
@@ -656,7 +753,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Как начать использовать</h2>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            <div class="layout-container">
                 <div class="steps-container">
                     <div class="step fade-in">
                         <div class="step-number">1</div>
@@ -753,7 +850,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Разработчик</h2>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            <div class="layout-container">
                 <div class="feature-card fade-in" style="height: 100%; padding: 32px;">
                     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
                         <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white;">
